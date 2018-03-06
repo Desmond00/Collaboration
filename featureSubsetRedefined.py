@@ -47,6 +47,8 @@ print(subsets)
 
 import random
 import math
+from sklearn.cross_validation import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
 
 def isRepeat(subsets, tempSet):
     print(subsets)
@@ -93,3 +95,40 @@ while i<Tmax:
     
 print(subsets)
 #This is the set of subsets without repeatation of features
+
+def trainTestScore(data):
+    data = pd.read_csv("pimaIndiansDiabetes.csv")
+    X = data.drop('1', axis=1)
+    y = data['1']
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.33)
+    errorRate = []
+    for i in range(40):
+        knn = KNeighborsClassifier(n_neighbor = i)
+        knn.fit(X_train, y_train)
+        prediction = knn.predict(X_test)
+        errorRate.append(np.mean(prediction != y_test))
+    plt.plot(range(1,40), errorRate, color='blue', linestyle='dashed', marker='o',
+     markerfacecolor='red', markersize=12)
+
+#SCA
+
+a = 1
+Tmax = 6
+subsets = []
+totalFeatures = len(X.columns)
+X = random.sample(range(1,totalFeatures),3)  
+P = 100
+t = 0
+while t<Tmax :
+
+totalFeatures = len(X.columns)
+X = random.sample(range(1,totalFeatures),3)
+subsets = []
+subsets.append(X) 
+def randomSearchAgents(m, n):
+    i = 1
+    while i<m:
+        X = random.sample(range(1,totalFeatures),3)
+        if (isRepeat(subsets, X) == False):
+            subsets.append(X)
+            i += 1
