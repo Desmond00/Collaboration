@@ -1,2 +1,20 @@
-https://www.youtube.com/watch?v=EGaw6VXV3GI
+Biological Dataset: http://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008
+	 brief details - This data has been prepared to analyze factors related to readmission as well as other outcomes pertaining to patients with diabetes.
 
+
+CS Dataset: https://archive.ics.uci.edu/ml/datasets/MoCap+Hand+Postures
+	 brief details - 5 types of hand postures from 12 users were recorded using unlabeled markers attached to fingers of a glove in a motion capture environment. Due to resolution and occlusion, missing values are common.
+
+
+CS Dataset: https://archive.ics.uci.edu/ml/datasets/Character+Font+Images
+	brief details - Character images from scanned and computer generated fonts.
+
+	to try: https://archive.ics.uci.edu/ml/datasets/APS+Failure+at+Scania+Trucks
+
+
+Social Dataset: http://archive.ics.uci.edu/ml/datasets/Student+Performance
+	brief details - Predict student performance in secondary education (high school).
+
+
+Electrical Dataset: https://archive.ics.uci.edu/ml/datasets/Appliances+energy+prediction
+	brief details - Experimental data used to create regression models of appliances energy use in a low energy building.
